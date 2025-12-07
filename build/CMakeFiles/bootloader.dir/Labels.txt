@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+C:/ProjetosEsp32/OneShotAdc/oneshot_read/build/CMakeFiles/bootloader
+C:/ProjetosEsp32/OneShotAdc/oneshot_read/build/CMakeFiles/bootloader.rule
+C:/ProjetosEsp32/OneShotAdc/oneshot_read/build/CMakeFiles/bootloader-complete.rule
+C:/ProjetosEsp32/OneShotAdc/oneshot_read/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+C:/ProjetosEsp32/OneShotAdc/oneshot_read/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+C:/ProjetosEsp32/OneShotAdc/oneshot_read/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+C:/ProjetosEsp32/OneShotAdc/oneshot_read/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+C:/ProjetosEsp32/OneShotAdc/oneshot_read/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+C:/ProjetosEsp32/OneShotAdc/oneshot_read/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+C:/ProjetosEsp32/OneShotAdc/oneshot_read/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

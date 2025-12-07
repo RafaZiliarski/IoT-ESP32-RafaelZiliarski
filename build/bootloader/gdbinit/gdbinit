@@ -1,0 +1,2 @@
+source C:/ProjetosEsp32/OneShotAdc/oneshot_read/build/bootloader/gdbinit/symbols
+source C:/ProjetosEsp32/OneShotAdc/oneshot_read/build/bootloader/gdbinit/connect

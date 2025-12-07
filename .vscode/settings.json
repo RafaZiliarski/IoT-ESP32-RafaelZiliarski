@@ -1,0 +1,25 @@
+{
+  "C_Cpp.intelliSenseEngine": "default",
+  "idf.espIdfPathWin": "C:\\Users\\rzili\\esp\\v5.5.1\\esp-idf",
+  "idf.toolsPathWin": "C:\\Users\\rzili\\.espressif",
+  "idf.pythonInstallPath": "C:\\Users\\rzili\\.espressif\\tools\\idf-python\\3.11.2\\python.exe",
+  "files.associations": {
+    "gpio.h": "c",
+    "soc_caps.h": "c",
+    "adc_oneshot.h": "c",
+    "sensors_app.h": "c",
+    "tasks_common.h": "c",
+    "nvs_flash.h": "c"
+  },
+  "idf.portWin": "COM7",
+  "idf.customExtraVars": {
+    "IDF_TARGET": "esp32"
+  },
+  "clangd.path": "C:\\Users\\rzili\\.espressif\\tools\\esp-clang\\esp-19.1.2_20250312\\esp-clang\\bin\\clangd.exe",
+  "clangd.arguments": [
+    "--background-index",
+    "--query-driver=C:\\Users\\rzili\\.espressif\\tools\\xtensa-esp-elf\\esp-14.2.0_20241119\\xtensa-esp-elf\\bin\\xtensa-esp32-elf-gcc.exe",
+    "--compile-commands-dir=c:\\ProjetosEsp32\\OneShotAdc\\oneshot_read\\build"
+  ],
+  "idf.flashType": "UART"
+}

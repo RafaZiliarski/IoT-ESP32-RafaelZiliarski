@@ -1,0 +1,204 @@
+:root {
+    --primary-color: #007bff;
+    --primary-dark: #0056b3;
+    --bg-color: #f0f2f5;
+    --card-bg: #ffffff;
+    --text-main: #333333;
+    --text-light: #666666;
+    --border-radius: 12px;
+    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    color: var(--text-main);
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin: 0;
+    color: var(--primary-dark);
+    font-size: 1.8rem;
+}
+
+header p {
+    margin: 5px 0 0;
+    color: var(--text-light);
+}
+
+/* CARDS */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.card-header {
+    background: #f8f9fa;
+    padding: 15px 20px;
+    font-weight: bold;
+    color: var(--text-main);
+    border-bottom: 1px solid #eee;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* SENSORS GRID */
+.sensors-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 colunas */
+    gap: 15px;
+    text-align: center;
+}
+
+.sensor-item {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.sensor-title {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.sensor-value {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--primary-dark);
+}
+
+.sensor-value small {
+    font-size: 0.8rem;
+    font-weight: normal;
+}
+
+/* BADGE STATUS */
+.badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: white;
+    background: #6c757d; /* Default Grey */
+}
+.badge.on { background: #dc3545; } /* Red */
+.badge.off { background: #28a745; } /* Green */
+
+/* FORMS */
+.form-group {
+    margin-bottom: 15px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box; /* Garante que padding nao aumente largura */
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/* BUTTONS */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-primary { background: var(--primary-color); }
+.btn-primary:hover { background: var(--primary-dark); }
+
+.btn-secondary { background: #6c757d; }
+.btn-secondary:hover { background: #5a6268; }
+
+.btn-danger { background: #dc3545; margin-top: 10px;}
+.btn-danger:hover { background: #c82333; }
+
+.btn-warning { background: #ffc107; color: #333; }
+.btn-warning:hover { background: #e0a800; }
+
+/* UTILS */
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 4px;
+}
+
+.info-row:last-child { border: none; }
+
+.label { font-weight: 500; color: var(--text-light); }
+.value { font-weight: 400; color: var(--text-main); text-align: right;}
+
+.file-upload-wrapper input { display: none; }
+.file-info-text { margin: 10px 0; font-size: 0.9rem; color: #666; text-align: center;}
+
+.checkbox-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+.checkbox-group input { margin-right: 10px; }
+
+.divider {
+    height: 1px;
+    background: #eee;
+    margin: 15px 0;
+}
+
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 480px) {
+    .sensors-grid {
+        grid-template-columns: 1fr; /* 1 coluna no celular */
+    }
+}
+
+.cooling-bar {
+    height: 10px;
+    border-radius: 6px;
+    background: #ddd;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.cooling-bar-fill {
+    height: 100%;
+    background: var(--primary-color);
+    width: 0%; /* atualizado via JS */
+    transition: width 0.5s ease-in-out;
+}

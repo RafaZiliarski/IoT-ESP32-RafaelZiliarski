@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Painel IoT - ESP32</title>
+    <script src='jquery-3.3.1.min.js'></script>
+    <link rel="stylesheet" href="app.css">
+    <script async src="app.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Monitoramento IoT</h1>
+            <p>Temperatura & Presença</p>
+        </header>
+
+        <!-- STATUS DO SISTEMA -->
+        <div class="card">
+            <div class="card-header">Status do Sistema</div>
+            <div class="card-body">
+                <div class="info-row">
+                    <span class="label">SSID (AP):</span>
+                    <span id="ap_ssid" class="value">Carregando...</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Data/Hora:</span>
+                    <span id="local_time" class="value">--/--/---- --:--:--</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEITURAS EM TEMPO REAL -->
+        <div class="card highlight-card">
+            <div class="card-header">Leituras em Tempo Real</div>
+            <div class="card-body sensors-grid">
+                
+                <div class="sensor-item">
+                    <div class="sensor-title">Temperatura</div>
+                    <div class="sensor-value">
+                        <span id="temperature_reading">--</span> <small>°C</small>
+                    </div>
+                </div>
+
+                <div class="sensor-item">
+                    <div class="sensor-title">Distância</div>
+                    <div class="sensor-value">
+                        <span id="distance_reading">--</span> <small>cm</small>
+                    </div>
+                </div>
+
+                <div class="sensor-item">
+                    <div class="sensor-title">Auxílio de Resfriamento</div>
+                    <div class="sensor-value">
+                        <span id="actuator_reading" class="badge">...</span>
+                    </div>
+                </div>
+
+                <!-- NOVO BLOCO -->
+                <div class="sensor-item">
+                    <div class="sensor-title">Potência do Resfriamento</div>
+                    <div class="sensor-value">
+                        <span id="cooling_power_reading">--</span> <small>%</small>
+                        <div class="cooling-bar">
+                            <div id="cooling_bar_fill" class="cooling-bar-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CONFIGURAÇÃO WIFI -->
+        <div class="card">
+            <div class="card-header">Configuração WiFi</div>
+            <div class="card-body">
+                <div class="form-group">
+                    <input id="connect_ssid" type="text" maxlength="32" placeholder="Nome da Rede (SSID)">
+                </div>
+                <div class="form-group">
+                    <input id="connect_pass" type="password" maxlength="64" placeholder="Senha">
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="show_pass" onclick="showPassword()">
+                    <label for="show_pass">Mostrar Senha</label>
+                </div>
+                
+                <button id="connect_wifi" class="btn btn-primary">Conectar</button>
+                
+                <div id="wifi_connect_credentials_errors"></div>
+                <h4 id="wifi_connect_status" class="status-msg"></h4>
+
+                <div id="ConnectInfo" style="display:none;">
+                    <div class="divider"></div>
+                    <div class="info-row"><span class="label">Conectado a:</span> <span id="connected_ap" class="value"></span></div>
+                    <div class="info-row"><span class="label">IP:</span> <span id="wifi_connect_ip" class="value"></span></div>
+                    <div class="info-row"><span class="label">Máscara:</span> <span id="wifi_connect_netmask" class="value"></span></div>
+                    <div class="info-row"><span class="label">Gateway:</span> <span id="wifi_connect_gw" class="value"></span></div>
+                    <button id="disconnect_wifi" class="btn btn-danger">Desconectar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ATUALIZAÇÃO DE FIRMWARE -->
+        <div class="card">
+            <div class="card-header">Atualização de Firmware</div>
+            <div class="card-body">
+                <div class="info-row">
+                    <span class="label">Versão Atual:</span>
+                    <span id="latest_firmware" class="value small-text"></span>
+                </div>
+                
+                <div class="file-upload-wrapper">
+                    <input type="file" id="selected_file" accept=".bin" onchange="getFileInfo()" />
+                    <label for="selected_file" class="btn btn-secondary">Selecionar Arquivo .bin</label>
+                </div>
+                
+                <div id="file_info" class="file-info-text"></div>
+                
+                <button onclick="updateFirmware()" class="btn btn-warning">Atualizar Agora</button>
+                <h4 id="ota_update_status" class="status-msg"></h4>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
